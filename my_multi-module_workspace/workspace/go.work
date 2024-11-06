@@ -1,0 +1,11 @@
+go 1.23.2
+
+// exampleの.gitは削除済み
+// go.modにはxxx.yyyというURLを書く。(ローカルのパスを直接書けない)
+// そのため、ローカルのモジュールを使うにはgo.modにxxx.yyy => ローカルへのreplaceが必要。
+// この仕組みだとモジュールごとにgo.modにreplaceを書くことになる。
+// go.workの仕組みだとこれをuseにまとめられるというメリットがあるようだ。
+use (
+	./example/hello
+	./hello
+)
